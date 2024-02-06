@@ -52,9 +52,8 @@ const Links = () => {
                 <Image src="/menu.png" alt="" width={40} height={40}/>
             </button>
             {
-                open && 
-                <div className={styles.mobileLinks}>
-                    {links.map((link) => (
+                <div className={`${styles.mobileLinks} ${open ? styles.open : ''}`}>
+                    {open && links.map((link) => (
                         <NavLink item = {link} key={link.title}/>
                     ))}
                 </div>
