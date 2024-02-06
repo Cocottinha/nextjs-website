@@ -18,7 +18,7 @@ const SinglePostPage = () => {
                     />
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Author</span>
-                        <span className={styles.detailValue}>Lab.Move André R. P.</span>
+                        <span className={styles.detailValue}>Lab.Mov André R. P.</span>
                     </div>
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Date</span>

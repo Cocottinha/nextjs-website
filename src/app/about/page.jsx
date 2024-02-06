@@ -8,7 +8,7 @@ const About = () =>{
                 <h2 className={styles.subtitle}>Sobre Nós</h2>
                 <h1 className={styles.title}>Nós somos uma equipe de cientistas, pesquisadores e desenvolvedores.</h1>
                 <p className={styles.desc}>
-                    Apartir de 2019, ano da fundação do Lab.Move, dedicamos nosso tempo para a análise físico-química de obras de arte e patrimônio histórico-cultural.
+                    Apartir de 2019, ano da fundação do Lab.Mov, dedicamos nosso tempo para a análise físico-química de obras de arte e patrimônio histórico-cultural.
                     Com uma equipe diversa, possuindo técnicos das mais diversas áreas da ciência.
                 </p>
                 <div className={styles.boxes}>
