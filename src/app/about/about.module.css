@@ -41,3 +41,22 @@
 .box h1{
     color: var(--labcolor);
 }
+@media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      text-align:center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 40px;
+    }
+    .boxes{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .subtitle{
+        padding-top: 20px;
+    }
+  }

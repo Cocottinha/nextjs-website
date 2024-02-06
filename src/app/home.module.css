@@ -31,8 +31,8 @@
     color: white;
 }
 .brands{
-    width: 500px;
-    height: 50px;
+    width: 600px;
+    height: 60px;
     position: relative;
     filter: grayscale(1);
 }
@@ -62,5 +62,6 @@
     }
     .brands{
       width: 100%;
+      height: 40px;
     }
   }
