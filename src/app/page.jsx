@@ -1,5 +1,6 @@
 import styles from "@/app/home.module.css"
 import Image from "next/image";
+import React from "react";
 
 const Home = () => { 
   return <div className={styles.container}>
