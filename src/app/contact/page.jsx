@@ -16,7 +16,6 @@ const Contact = () =>{
                     <textarea name="" id="" cols="38" rows="10" placeholder="Descrição"/>
                     <button className={styles.btnEnviar}>Enviar</button>
                 </form>
-
             </div>
         </div>
     )
