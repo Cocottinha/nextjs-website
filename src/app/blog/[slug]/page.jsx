@@ -3,6 +3,17 @@ import styles from "./page.module.css"
 import PostUser from "@/components/postUser/postUser"
 import { Suspense } from "react"
 import {getPost} from "@/lib/data"
+import {App} from "@/components/charts/chart"
+
+const getData = async (slug) => {
+    const res = await fetch(`http://localhost:3000/api/blog/${slug}`,{next:{revalidate:3600}});
+
+    if(!res.ok){
+        throw new Error ("Wrong")
+
+    }
+    return res.json();
+};
 
 export const generateMetadata = async ({params}) => {
     const {slug} = params
@@ -18,8 +29,8 @@ export const generateMetadata = async ({params}) => {
 const SinglePostPage = async ({ params }) => {
 
     const { slug } = params;
-
-    const post = await getPost(slug)
+    const post = await getData(slug)
+    //const post = await getPost(slug)
 
     return (
         <div className={styles.container}>
@@ -36,11 +47,14 @@ const SinglePostPage = async ({ params }) => {
                     )}
                     <div className={styles.detailText}>
                         <span className={styles.detailTitle}>Date</span>
-                        <span className={styles.detailValue}>{post.createdAt.toString().slice(4,16)}</span>
+                        <span className={styles.detailValue}>{post.createdAt.toString().slice(0,10)}</span>
                     </div>
                 </div>
                 <div className={styles.content}>
                     {post.desc}
+                </div>
+                <div>
+                    <App/>
                 </div>
             </div>
         </div>

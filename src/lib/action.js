@@ -2,6 +2,8 @@
 import { revalidatePath } from "next/cache"
 import { connectToDB } from "./connectToDB"
 import { Post,User } from "./models"
+import { signIn, signOut } from "./auth"
+import { options } from "@/components/charts/chart"
 
 export const addPost = async(formData)=>{
 
@@ -50,3 +52,12 @@ export const addPost = async(formData)=>{
         }
     }
  }
+
+export const handleGithubLogin = async () => {
+    "use server"
+    await signIn("github", { redirectTo:"/"})
+}
+export const handleLogout = async () => {
+    "use server"
+    await signOut()
+}

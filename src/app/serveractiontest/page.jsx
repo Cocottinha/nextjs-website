@@ -14,6 +14,7 @@ const ServerActionPage = () =>{
                 <input type ="text" placeholder="postId" name="id"/>
                 <button>Delete</button>
             </form>
+
         </div>
     )
 }
