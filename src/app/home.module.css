@@ -27,7 +27,7 @@
     font-weight: bold;
 }
 .button:first-child{
-    background-color: var(--labcolor);
+    background: linear-gradient(90deg, var(--labcolor) 0%, rgba(0,212,255,1) 100%);
     color: white;
 }
 .brands{
