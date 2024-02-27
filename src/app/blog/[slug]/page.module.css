@@ -38,6 +38,10 @@
 .content{
     font-size: 20px;
 }
+.tecnicas{
+    padding: 5px;
+    color: var(--labcolor);
+}
 @media (max-width:768px){
     .imgContainer{
         display: none;

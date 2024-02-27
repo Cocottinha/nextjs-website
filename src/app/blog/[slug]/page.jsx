@@ -3,7 +3,7 @@ import styles from "./page.module.css"
 import PostUser from "@/components/postUser/postUser"
 import { Suspense } from "react"
 import {getPost} from "@/lib/data"
-import {App} from "@/components/charts/chart"
+import List from "@/components/list/List"
 
 const getData = async (slug) => {
     const res = await fetch(`http://localhost:3000/api/blog/${slug}`,{next:{revalidate:3600}});
@@ -23,14 +23,26 @@ export const generateMetadata = async ({params}) => {
     return{
         title:post.title,
         description:post.desc,
+        Pontos:post.Pontos
     }
   }
-
 const SinglePostPage = async ({ params }) => {
 
     const { slug } = params;
     const post = await getData(slug)
     //const post = await getPost(slug)
+    if(post.Pontos){
+        post.Pontos.forEach(ponto => {
+            if(ponto.AnaliseTecnica){
+                ponto.AnaliseTecnica.forEach(tecnica =>{
+                });
+            }else{
+                console.log("no tecnica found")
+            }
+        });
+    }else{
+        console.log("no ponto found")
+    }
 
     return (
         <div className={styles.container}>
@@ -54,7 +66,11 @@ const SinglePostPage = async ({ params }) => {
                     {post.desc}
                 </div>
                 <div>
-                    <App/>
+                    <h2 className={styles.tecnicas}>
+                        Técnicas
+                    </h2>
+                    
+                    <List json = {post}/>
                 </div>
             </div>
         </div>
