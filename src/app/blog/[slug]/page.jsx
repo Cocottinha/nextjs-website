@@ -19,7 +19,7 @@ export const generateMetadata = async ({params}) => {
     const {slug} = params
 
     const post = await getPost(slug)
-
+    console.log(post)
     return{
         title:post.title,
         description:post.desc,
@@ -47,7 +47,7 @@ const SinglePostPage = async ({ params }) => {
     return (
         <div className={styles.container}>
             {post.img && <div className={styles.imgContainer}>
-                <Image src={post.img} alt="" fill className={styles.img} />
+                <Image src={post.img} alt="" fill  className={styles.img} />
             </div>}
             <div className={styles.textContainer}>
                 <h1 className={styles.title}>{post.title}</h1>
@@ -68,8 +68,7 @@ const SinglePostPage = async ({ params }) => {
                 <div>
                     <h2 className={styles.tecnicas}>
                         Técnicas
-                    </h2>
-                    
+                    </h2>                   
                     <List json = {post}/>
                 </div>
             </div>

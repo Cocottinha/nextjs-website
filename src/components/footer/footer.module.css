@@ -3,7 +3,7 @@
     justify-content: space-between;
     height: 100px;
     align-items: center;
-    color: var(--labcolor);
+    color: #070bff;
 }
 .logo{
     font-weight: bold;

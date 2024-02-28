@@ -2,6 +2,7 @@
 import styles from "./list.module.css"
 import {Listbox, ListboxItem} from "@nextui-org/react";
 import {ListboxWrapper} from "./ListboxWrapper";
+import {chart} from "@/components/charts/chart"
 
 const App = async({json}) => {
     const pontos = json.Pontos
@@ -22,9 +23,9 @@ const App = async({json}) => {
     // }
   return (   
     <ListboxWrapper>
-      <Listbox aria-label="Actions" onAction={(key) => alert(key)} className={styles.caixa}>
+      <Listbox aria-label="Actions" onAction={(key) => window.open(chart)} className={styles.caixa}>
         <ListboxItem key="1" className={styles.item}>
-            Vrau
+            Ponto_1_XRF_1
         </ListboxItem>    
       </Listbox>
     </ListboxWrapper>

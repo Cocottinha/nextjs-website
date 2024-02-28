@@ -18,7 +18,7 @@ const About = () =>{
                 </p>
                 <div className={styles.boxes}>
                     <div className={styles.box}>
-                        <h1>11+</h1>
+                        <h1>15+</h1>
                         <p>Museus Visitados</p>
                     </div>
                     <div className={styles.box}>
@@ -27,7 +27,7 @@ const About = () =>{
                     </div>
                     <div className={styles.box}>
                         <h1>4+</h1>
-                        <p>Anos de Experiência</p>
+                        <p>Anos de Exp.</p>
                     </div>
                 </div>
             </div>
