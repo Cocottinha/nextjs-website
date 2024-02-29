@@ -1,7 +1,6 @@
-
-const Loading = () => {
+import { Spinner } from "@nextui-org/react"
+export default function Loading(){
     return(
-        <div>Loading</div>
+        <Spinner/>
     )
 }
-export default Loading

@@ -9,7 +9,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'MinhaFonte',sans-serif;
+}
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('/fonts/Geologica_Auto-Medium.ttf');
+  font-weight: bold;
+  font-style: normal;
 }
 .container{
     width: 1536px;
