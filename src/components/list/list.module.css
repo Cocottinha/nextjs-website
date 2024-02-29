@@ -24,7 +24,7 @@
 }
 .caixa{
     margin-top: 5px;
-    max-height: 230px;
+    max-height: 330px;
     max-width: 400px;
     overflow-y: scroll;
 }
@@ -38,6 +38,6 @@
   
   /* Handle */
 .caixa::-webkit-scrollbar-thumb {
-    background: var(--labcolor);
+    background: linear-gradient(0deg, var(--labcolor) 0%, rgba(0,212,255,1) 100%);
     border-radius: 10px;
 }

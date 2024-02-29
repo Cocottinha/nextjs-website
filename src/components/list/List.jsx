@@ -23,9 +23,11 @@ const App = async({json}) => {
     <ListboxWrapper>
       <Listbox aria-label="Actions" onAction={(key) => window.open("/grafico")} className={styles.caixa}>
         {json.Pontos.map((ponto) => (
-              <ListboxItem key="1" className={styles.item}>
-                {ponto.Nome}
-              </ListboxItem> 
+          ponto.AnaliseTecnica.map((tecnica) => (
+            <ListboxItem key="1" value="1" className={styles.item}>
+                {ponto.Nome+"_"+tecnica.nomeDaTecnica}
+              </ListboxItem>
+          ))             
           ))                           
         }                    
       </Listbox>
