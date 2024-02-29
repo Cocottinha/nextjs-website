@@ -19,7 +19,6 @@ export const generateMetadata = async ({params}) => {
     const {slug} = params
 
     const post = await getPost(slug)
-    console.log(post)
     return{
         title:post.title,
         description:post.desc,
@@ -31,18 +30,7 @@ const SinglePostPage = async ({ params }) => {
     const { slug } = params;
     const post = await getData(slug)
     //const post = await getPost(slug)
-    if(post.Pontos){
-        post.Pontos.forEach(ponto => {
-            if(ponto.AnaliseTecnica){
-                ponto.AnaliseTecnica.forEach(tecnica =>{
-                });
-            }else{
-                console.log("no tecnica found")
-            }
-        });
-    }else{
-        console.log("no ponto found")
-    }
+    
 
     return (
         <div className={styles.container}>

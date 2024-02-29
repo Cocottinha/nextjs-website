@@ -9,8 +9,7 @@ export const metadata = {
 const About = () =>{
     return(
         <div className={styles.container}>
-            <div className={styles.textContainer}>
-                <h2 className={styles.subtitle}>Sobre Nós</h2>
+            <div className={styles.textContainer}>                
                 <h1 className={styles.title}>Nós somos uma equipe de cientistas, pesquisadores e desenvolvedores.</h1>
                 <p className={styles.desc}>
                     Apartir de 2019, ano da fundação do Lab.Mov, dedicamos nosso tempo para a análise físico-química de obras de arte e patrimônio histórico-cultural.
