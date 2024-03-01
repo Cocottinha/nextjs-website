@@ -10,11 +10,10 @@
     border: 0px;
     border-radius: 5px;
 }
-
 .btnMenu,.mobileLinks{
     display: none;
 }
-@media (max-width:768px){
+@media (max-width:1024px){
     .links{
         display: none;
     }
@@ -27,6 +26,7 @@
         height: 40px;
         border: none;
         padding: 0;
+        transition: 1.5s;
     }
     .mobileLinks{
         position: absolute;
@@ -41,10 +41,11 @@
         justify-content: center;
         gap: 10px;
         overflow: hidden;
-        transition:ease-in-out 1.5s;
+        transition:1.5s;
         z-index: 10;
     }
     .mobileLinks.open{
         display: flex;
+        transition: 1.5s;
     }
 }

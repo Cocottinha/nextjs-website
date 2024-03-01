@@ -34,7 +34,7 @@ const About = () =>{
                 <Image
                     src="/ifrj.webp"
                     alt="Trabalho de Campo"
-                    fill className={styles.imgabout}/>
+                    width={700} height={500} className={styles.imgabout}/>
             </div>
         </div>
     )

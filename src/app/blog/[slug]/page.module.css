@@ -33,14 +33,27 @@
     font-weight: bold;
 }
 .detailValue{
-    font-weight: 500;
+    font-weight: 300;
 }
 .content{
     font-size: 20px;
+    color: rgb(74, 74, 72);
 }
 .tecnicas{
     padding: 5px;
     color: var(--labcolor);
+}
+@media (max-width:1260px){
+    .img{
+        flex: auto;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width:1024){
+    .textContainer{
+        flex:auto;
+    }
 }
 @media (max-width:768px){
     .imgContainer{

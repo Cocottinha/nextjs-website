@@ -11,10 +11,13 @@
     box-sizing: border-box;
     font-family:'MinhaFonte',sans-serif;
 }
+p{
+  color: rgb(74, 74, 72);
+}
 @font-face {
   font-family: 'MinhaFonte';
-  src: url('/fonts/Geologica_Auto-Medium.ttf');
-  font-weight: bold;
+  src: url('/fonts/Geologica_Auto-Light.ttf');
+  font-weight:100;
   font-style: normal;
 }
 .container{

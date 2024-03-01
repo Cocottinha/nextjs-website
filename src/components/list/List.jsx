@@ -2,8 +2,7 @@
 import styles from "./list.module.css"
 import {Listbox, ListboxItem, Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem} from "@nextui-org/react";
 import {ListboxWrapper} from "./ListboxWrapper";
-import { TreeView } from '@mui/x-tree-view/TreeView';
-import { TreeItem } from '@mui/x-tree-view/TreeItem';
+import TreeView from "../treeView/treeView";
 
 const App = async({json}) => {
   if (json.Pontos) {
@@ -20,22 +19,24 @@ const App = async({json}) => {
   } else {
     //console.log("no ponto found")
   }
-  return (   
-    <ListboxWrapper>
-      <Listbox aria-label="Actions" className={styles.caixa}>
-        {json.Pontos.map((ponto) => (
-          <ListboxItem key={ponto.Nome} className={styles.item} onAction={(key) => alert(ponto.AnaliseTecnica.map((tecnica) => {
-            <ListboxItem key={tecnica.nomeDaTecnica}>
-            {tecnica.nomeDaTecnica}
-          </ListboxItem>
-          }
-          ))}>
-            {ponto.Nome}
-          </ListboxItem>
-        ))
-        }
-      </Listbox>
-    </ListboxWrapper>
+  return (  
+    
+    <TreeView data={json}></TreeView>
+    // <ListboxWrapper>
+    //   <Listbox aria-label="Actions" className={styles.caixa}>
+    //     {json.Pontos.map((ponto) => (
+    //       <ListboxItem key={ponto.Nome} className={styles.item} onMouseOver={(key) => (ponto.AnaliseTecnica.map((tecnica) => {
+    //         <ListboxItem key={tecnica.nomeDaTecnica}>
+    //         {tecnica.nomeDaTecnica}
+    //       </ListboxItem>
+    //       }
+    //       ))}>
+    //         {ponto.Nome}
+    //       </ListboxItem>
+    //     ))
+    //     }
+    //   </Listbox>
+    // </ListboxWrapper>
 
 
     // <TreeView
