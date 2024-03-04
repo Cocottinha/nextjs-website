@@ -1,42 +1,38 @@
 "use client"
-import { Chart } from "react-google-charts";
+import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 
-export const data = [
-  [
-    "Day",
-    "Ponto_1_XRF_1"
-  ],
-  [1, 37.8],
-  [2, 30.9],
-  [3, 25.4],
-  [4, 11.7],
-  [5, 11.9],
-  [6, 8.8],
-  [7, 7.6],
-  [8, 12.3],
-  [9, 16.9],
-  [10, 12.8],
-  [11, 5.3],
-  [12, 6.6],
-  [13, 4.8],
-  [14, 4.2],
-];
+const DynamicPlot = dynamic(() => import('react-plotly.js'), { ssr: false });
 
-export const options = {
-  chart: {
-    title: "Box Office Earnings in First Two Weeks of Opening",
-    subtitle: "in millions of dollars (USD)",
-  },
+const PlotComponent = ({ x,y }) => {
+  // const [plotLoaded, setPlotLoaded] = useState(false);
+
+  // useEffect(() => {
+  //   setPlotLoaded(true);
+  // }, []);
+
+  // if (!plotLoaded) return <div>Loading Plot...</div>;
+
+  const xValues = x;
+  const yValues = y;
+
+  return (
+    <div>
+      <h2>My Plot</h2>
+      <DynamicPlot
+        data={[
+          {
+            x: xValues,
+            y: yValues,
+            type: 'scatter',
+            mode: 'lines+points',
+            marker: { color: 'blue' },
+          },
+        ]}
+        layout={{ width: 800, height: 600, title: 'My Plot' }}
+      />
+    </div>
+  );
 };
 
-export function App() {
-  return (
-    <Chart
-      chartType="Line"
-      width="100%"
-      height="400px"
-      data={data}
-      options={options}
-    />
-  );
-}
+export default PlotComponent;

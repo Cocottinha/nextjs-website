@@ -1,22 +1,32 @@
 "use server"
 import { promises as fs } from 'fs';
 
-const arrayA=[]
-const arrayB=[]
+let arrayA=[]
+let arrayB=[]
 
 export async function readTextFile(file) {
     const text = await fs.readFile(file, 'utf-8');
-    
     const line = text.split('\n');
-    
-    line.forEach(l => {
-        const part = l.split(';');
+    // console.log(line)
 
-        arrayA.push(part[0])
-        arrayB.push(part[1])
+    line.forEach(l => {
+        let part = l.trim().split(';');
+        part = part.map((n) => {
+            let newvalue = n.replace(",", ".")
+            return newvalue
+        })
+        // console.log(part)
+        
+        if (part[1] && part[0] !== undefined) {
+            const num = parseFloat(part[0])
+            const num1 = parseFloat(part[1].trim())
+            arrayA.push(num)
+            arrayB.push(num1);
+        }
 
     })
-    //console.log(arrayA)
-    //console.log(arrayB)
-    return {arrayA,arrayB}
+    return (
+        {arrayA,arrayB}
+    )
+    
 }

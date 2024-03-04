@@ -1,7 +1,14 @@
-import {App} from "@/components/charts/chart"
-const Grafico = () => {
-  return(
-    <App/>
-  )
+import PlotComponent from "@/components/charts/chart"
+import { readTextFile } from "@/components/charts/getData";
+
+const Grafico = async () => {
+  const { arrayA, arrayB } = await readTextFile('public/00105-Spectrometer Mode.txt');
+
+  return (
+    <div>
+      <h1>Next.js with Plotly.js</h1>
+      <PlotComponent x={arrayA} y={arrayB}/>
+    </div>
+  );
 }
 export default Grafico
