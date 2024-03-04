@@ -18,7 +18,7 @@ const Contact = () =>{
                     <input type="text" placeholder="Email"/>
                     <input type="text" placeholder="Telefone ou Celular"/>
                     <input type="text" placeholder="Cidade"/>
-                    <textarea name="" id="" cols="38" rows="10" placeholder="Descrição"/>
+                    <textarea name="" id="" cols="38" rows="9" placeholder="Descrição"/>
                     <button className={styles.btnEnviar}>Enviar</button>
                 </form>
             </div>

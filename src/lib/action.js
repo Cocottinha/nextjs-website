@@ -3,13 +3,11 @@ import { revalidatePath } from "next/cache"
 import { connectToDB } from "./connectToDB"
 import { Post,User } from "./models"
 import { signIn, signOut } from "./auth"
-import { options } from "@/components/charts/chart"
+import bcrypt from "bcryptjs"
+
 
 export const addPost = async(formData)=>{
 
-    //const title = formData.get("title")
-    //const desc = formData.get("desc")
-    //const slug = formData.get("slug")
 
     const {title, desc, slug, userId} = Object.fromEntries(formData)
 
@@ -34,10 +32,6 @@ export const addPost = async(formData)=>{
 
  export const deletePost = async(formData)=>{
 
-    //const title = formData.get("title")
-    //const desc = formData.get("desc")
-    //const slug = formData.get("slug")
-
     const {id} = Object.fromEntries(formData)
 
     try {
@@ -60,4 +54,46 @@ export const handleGithubLogin = async () => {
 export const handleLogout = async () => {
     "use server"
     await signOut()
+}
+export const register = async (formData)=>{
+    const {username, email, password, passwordRepeat,img} = Object.fromEntries(formData)
+
+    if(password !== passwordRepeat){return "Password do not match"}
+    try{
+        connectToDB()
+
+        const user = await User.findOne({username})
+
+        if(user){
+            return "Username already exists!"
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password, salt)
+
+        
+        const newUser = new User({
+            username,
+            email,
+            password:hashedPassword,
+            img,
+        })
+        await newUser.save()
+        console.log("saved to db")
+    }
+    catch(err){
+        console.log(err)
+        return{error: "SOmething wrong"}
+    }
+}
+export const login = async (formData)=>{
+    const {username, password} = Object.fromEntries(formData)
+
+    try{
+        await signIn("credentials",{username,password})
+    }
+    catch(err){
+        console.log(err)
+        return{error: "Something wrong"}
+    }
 }
