@@ -32,9 +32,11 @@ const About = () =>{
             </div>
             <div className={styles.imgContainer}>
                 <Image
-                    src="/ifrj.webp"
+                    src="/e8ccc8fa-c46b-4418-bcf0-e19e80ea977b.jpg"
                     alt="Trabalho de Campo"
-                    width={700} height={500} className={styles.imgabout}/>
+                    priority
+                    unoptimized={true}
+                    width={1430} height={953} className={styles.imgabout}/>
             </div>
         </div>
     )
