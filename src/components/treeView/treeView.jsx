@@ -20,9 +20,13 @@ const TreeNode = ({ node }) => {
         {isExpanded && node.AnaliseTecnica && node.AnaliseTecnica.map((tecnica, index) => (
           <div key={index} className={styles.item}>          
             <Link href={{
-              pathname:'/grafico',
-              query:(tecnica.nomeDaTecnica)}} target="_blank" className={styles.item}>
-            {tecnica.nomeDaTecnica}
+              pathname: '/grafico',
+              query: {
+                path: tecnica.diretorio
+              }
+            }}
+              target="_blank" className={styles.item}>
+              {tecnica.nomeDaTecnica}
             </Link>
           </div>
         ))}

@@ -45,7 +45,7 @@
     box-shadow: 0.1rem 0.1rem 0.5rem gray;
     object-fit:cover;
 }
-@media (max-width: 1260px) {
+@media (max-width: 1280px) {
   .container {
     flex-direction: column;
     text-align:center;
@@ -55,14 +55,14 @@
     justify-content: center;
   }
   .brandImg{
-    width: 100%;
-    height: 60px;
-    margin-left: 30%;
+    width: 125%;
+    height: 80px;
+    margin-left: 20%;
   }
   .heroImg{
     object-fit:cover;
-    width: 700px;
-    height: 450px;
+    width: 980px;
+    height: 580px;
   }
 }
 @media (max-width: 1024px) {
@@ -76,7 +76,7 @@
     }
     .brandImg{
       width: 100%;
-      height: 60px;
+      height: 80px;
       margin-left: 10%;
     }
     .heroImg{

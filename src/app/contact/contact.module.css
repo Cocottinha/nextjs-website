@@ -10,7 +10,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 .texto{
     width: 100%;
@@ -21,21 +21,34 @@
     text-align: center;
 }
 .title{
-    font-size: 30px;
+    font-size: 45px;
     flex: 1;
     font-weight: bold;
 }
 .desc{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
     flex: 1;
+    width: 80%;
+    text-align: center;
 }
 .form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    width: 80%;
 }
-.form input, 
+.form input{
+    height: 5%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px black;
+    outline: 1px black ;
+    background-color: #f4f4f5;
+    color: var(black);
+    font-family: 'Minha Fonte',sans-serif;
+    font-size: 20px;
+}
 .form textarea{
     padding: 20px;
     border-radius: 5px;
@@ -43,7 +56,8 @@
     outline: 1px black ;
     background-color: #f4f4f5;
     color: var(black);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Minha Fonte',sans-serif;
+    font-size: 20px;
 }
 .form button{
     padding: 20px;
@@ -53,9 +67,53 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    height: 5%;
+    font-size: 20px;
+}
+@media (max-width:1280px){
+    .container{
+        flex-direction: column;
+    }
+}
+@media (max-width:1024px){
+    .container{
+        flex-direction: column;
+    }
+    .form{
+        gap: 20px;
+    }
+    .formcontainer{
+        gap: 20px;
+    }
 }
 @media (max-width:768px){
     .container{
         flex-direction: column;
+    }
+    .form{
+        gap: 20px;
+    }
+    .formcontainer{
+        gap: 20px;
+    }
+}
+@media (max-width:480px){
+    .container{
+        flex-direction: column;
+    }
+    .form{
+        gap: 15px;
+    }
+    .formcontainer{
+        gap: 15px;
+    }
+    .title{
+        font-size: 35px;
+    }
+    .desc{
+        font-size: 18px;
+    }
+    .form input, .form textarea{
+        font-size: 16px;
     }
 }

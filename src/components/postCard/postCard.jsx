@@ -4,6 +4,7 @@ import Link from "next/link"
 
 const PostCard = ({post}) => {
     return(
+        <Link className={styles.link} href={`/blog/${post.slug}`}>
         <div className={styles.container}>
             <div className={styles.top}>
                 {post.img && <div className={styles.imgCont}>
@@ -14,9 +15,10 @@ const PostCard = ({post}) => {
             <div className={styles.bottom}>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.desc}>{post.desc}</p>
-                <Link className={styles.link} href={`/blog/${post.slug}`}>Read More</Link>
+                
             </div>
         </div>
+        </Link>
     )
 }
 
