@@ -1,3 +1,4 @@
+"use server"
 import PlotComponent from "@/components/charts/chart"
 import { readTextFile } from "@/components/charts/getData";
 

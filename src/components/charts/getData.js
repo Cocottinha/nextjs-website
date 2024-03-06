@@ -7,7 +7,6 @@ let arrayB=[]
 export async function readTextFile(file) {
     const text = await fs.readFile(file, 'utf-8');
     const line = text.split('\n');
-    // console.log(line)
 
     line.forEach(l => {
         let part = l.trim().split(';');
@@ -15,7 +14,6 @@ export async function readTextFile(file) {
             let newvalue = n.replace(",", ".")
             return newvalue
         })
-        // console.log(part)
         
         if (part[1] && part[0] !== undefined) {
             const num = parseFloat(part[0])
