@@ -63,11 +63,12 @@ export const register = async (previousState, formData)=>{
         connectToDB()
 
         const user = await User.findOne({username})
+        const mail = await User.findOne({email})
 
         if(user){
             return {error:"Username already exists!"}
         }
-        if(email){
+        if(mail){
             return {error:"Email already exists!"}
         }
 

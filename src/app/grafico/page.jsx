@@ -1,6 +1,5 @@
 import PlotComponent from "@/components/charts/chart"
 import { readTextFile } from "@/components/charts/getData";
-import styles from "./grafico.module.css"
 
 const Grafico = async () => {
   const { arrayA, arrayB } = await readTextFile('public/00105-Spectrometer Mode.txt');

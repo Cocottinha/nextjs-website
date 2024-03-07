@@ -3,14 +3,13 @@ import styles from "./page.module.css"
 import PostUser from "@/components/postUser/postUser"
 import { Suspense } from "react"
 import {getPost} from "@/lib/data"
-import List from "@/components/list/List"
+import TreeView from "@/components/treeView/treeView"
 
 const getData = async (slug) => {
     const res = await fetch(`http://localhost:3000/api/blog/${slug}`,{next:{revalidate:3600}});
 
     if(!res.ok){
         throw new Error ("Wrong")
-
     }
     return res.json();
 };
@@ -29,8 +28,7 @@ const SinglePostPage = async ({ params }) => {
 
     const { slug } = params;
     const post = await getData(slug)
-    //const post = await getPost(slug)
-
+    
     return (
         <div className={styles.container}>
             {post.img && 
@@ -56,8 +54,8 @@ const SinglePostPage = async ({ params }) => {
                 <div>
                     <h2 className={styles.tecnicas}>
                         Técnicas
-                    </h2>                   
-                    <List json = {post}/>
+                    </h2>
+                    <TreeView data={post} />
                 </div>
             </div>
         </div>
