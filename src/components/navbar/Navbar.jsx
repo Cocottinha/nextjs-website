@@ -7,7 +7,9 @@ const Navbar = async() => {
     const session = await auth();
     return(
         <div className={styles.container}>
-            <Link href="/" className={styles.logo}>Lab.Data</Link>
+            <div>
+                <Link href="/" className={styles.logo}>Lab.Data</Link>
+            </div>          
             <div>
                 <Links session={session}></Links>
             </div>

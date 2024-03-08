@@ -25,7 +25,7 @@ const Home = () => {
           <Image src={'/ifrj.png'} width={120} height={40}/>
         </div>
         <div className={styles.brandImg}>
-          <Image src={'/liscomp.png'} width={145} height={40}/>
+          <Image src={'/liscomp.png'} width={155} height={40}/>
         </div>
         <div className={styles.brandImg}>
           <Image src={'/cnpq.png'} width={125} height={40}/>

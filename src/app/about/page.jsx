@@ -8,6 +8,7 @@ export const metadata = {
 
 const About = () =>{
     return(
+        
         <div className={styles.container}>
             <div className={styles.textContainer}>                
                 <h1 className={styles.title}>Nós somos uma equipe de cientistas, pesquisadores e desenvolvedores.</h1>
@@ -17,16 +18,19 @@ const About = () =>{
                 </p>
                 <div className={styles.boxes}>
                     <div className={styles.box}>
-                        <h1>15+</h1>
+                        <h1>15 +</h1>
                         <p>Museus Visitados</p>
+                        <i className="material-icons" style={{fontSize:"50px"}}>location_on</i>
+                    </div>
+                    <div className={styles.box}>   
+                       <h1>50 +</h1>           
+                       <p>Obras Analisadas</p>
+                       <i className="material-icons" style={{fontSize:"50px"}}>image</i>
                     </div>
                     <div className={styles.box}>
-                        <h1>50+</h1>
-                        <p>Obras Analisadas</p>
-                    </div>
-                    <div className={styles.box}>
-                        <h1>4+</h1>
-                        <p>Anos de Exp.</p>
+                        <h1>4 +</h1>
+                        <p>Anos de Experiência</p>
+                        <i className="material-icons" style={{fontSize:"50px"}}>keyboard_double_arrow_up</i>
                     </div>
                 </div>
             </div>
