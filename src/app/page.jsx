@@ -18,7 +18,21 @@ const Home = () => {
           Orgãos de Fomento/Parceiros:
       </h4>
       <div className={styles.brands}>
-        <Image src="/brands.png" alt="" width={1000} height={100} className={styles.brandImg}></Image>
+        <div className={styles.brandImg}>
+          <Image src={'/ibram.png'} width={110} height={40} />
+        </div>
+        <div className={styles.brandImg}>
+          <Image src={'/ifrj.png'} width={120} height={40}/>
+        </div>
+        <div className={styles.brandImg}>
+          <Image src={'/liscomp.png'} width={145} height={40}/>
+        </div>
+        <div className={styles.brandImg}>
+          <Image src={'/cnpq.png'} width={125} height={40}/>
+        </div>
+        <div className={styles.brandImg}>
+          <Image src={'/faperj.jfif'} width={100} height={40}/>
+        </div>
       </div>
     </div>
     <div className={styles.imgcontainer}>
