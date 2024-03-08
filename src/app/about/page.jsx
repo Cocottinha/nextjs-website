@@ -20,17 +20,14 @@ const About = () =>{
                     <div className={styles.box}>
                         <h1>15 +</h1>
                         <p>Museus Visitados</p>
-                        <i className="material-icons" style={{fontSize:"50px"}}>location_on</i>
                     </div>
                     <div className={styles.box}>   
                        <h1>50 +</h1>           
                        <p>Obras Analisadas</p>
-                       <i className="material-icons" style={{fontSize:"50px"}}>image</i>
                     </div>
                     <div className={styles.box}>
                         <h1>4 +</h1>
                         <p>Anos de Experiência</p>
-                        <i className="material-icons" style={{fontSize:"50px"}}>keyboard_double_arrow_up</i>
                     </div>
                 </div>
             </div>

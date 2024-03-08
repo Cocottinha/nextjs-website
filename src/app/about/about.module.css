@@ -60,11 +60,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
 }
-.box i{
-    background: -webkit-linear-gradient(360deg,var(--labcolor), rgba(0,212,255,1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-}
 @media (max-width: 1280px) {
     .container {
       flex-direction: column;

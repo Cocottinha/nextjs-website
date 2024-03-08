@@ -8,7 +8,7 @@ const Navbar = async() => {
     return(
         <div className={styles.container}>
             <div>
-                <Link href="/" className={styles.logo}>Lab.Data</Link>
+                <Link href="/" className={styles.logo}><i className="material-icons" style={{fontSize:"30px"}}>layers</i>Lab.Data</Link>
             </div>          
             <div>
                 <Links session={session}></Links>
