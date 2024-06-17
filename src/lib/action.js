@@ -47,10 +47,6 @@ export const addPost = async(formData)=>{
     }
  }
 
-export const handleGithubLogin = async () => {
-    "use server"
-    await signIn("github", { redirectTo:"/"})
-}
 export const handleLogout = async () => {
     "use server"
     await signOut()
