@@ -1,7 +1,6 @@
 import PostCard from "@/components/postCard/postCard"
 import styles from "@/app/blog/blog.module.css"
-import {getPosts} from "@/lib/data"
-
+import Link from "next/link";
 const getData = async () => {
     const res = await fetch("http://localhost:3000/api/blog",{next:{revalidate:3600}});
 
@@ -15,10 +14,10 @@ const getData = async () => {
 const Blog = async () =>{
 
     const posts = await getData();
-    //const posts = await getPosts();
 
     return(
         <div className={styles.container}>
+            <Link href={"/addPost"}>a</Link>
             {posts.map((post) => (
                 <div className={styles.cont} key={post.id}>
                     <PostCard post={post}/>

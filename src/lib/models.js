@@ -19,9 +19,6 @@ const userSchema = new mongoose.Schema({
         required:true,
         min:6
     },
-    img:{
-        type:String,        
-    },
     isAdmin:{
         type:Boolean,
         default:null
@@ -31,7 +28,11 @@ const userSchema = new mongoose.Schema({
 )
 
 const postSchema = new mongoose.Schema({
-    title:{
+    tipo:{
+        type:String,
+        required:true,
+    },
+    atividade:{
         type:String,
         required:true,
     },
@@ -39,21 +40,37 @@ const postSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    img:{
+    hora:{
         type:String,
+        required:true,
     },
     userId:{
         type:String,
+        required:true
+    },
+    pendente:{
+        type:Boolean,
         required:false
     },
-    slug:{
+    aprovado:{
+        type:Boolean,
+        required:false
+    },
+    arquivo:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     }
 },
 {timestamps:true}
 )
 
+const arquivoSchema = new mongoose.Schema({
+    diretorio:{
+        type:String,
+        required:true
+    },
+},{timestamps:true})
+
 export const User = mongoose.models?.User || mongoose.model("User", userSchema);
 export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);
+export const Arquivo = mongoose.models?.Arquivo || mongoose.model("Arquivo", arquivoSchema);

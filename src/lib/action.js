@@ -1,23 +1,22 @@
 "use server"
 import { revalidatePath } from "next/cache"
 import { connectToDB } from "./connectToDB"
-import { Post,User } from "./models"
+import { Post,User, Arquivo } from "./models"
 import { signIn, signOut } from "./auth"
 import bcrypt from "bcryptjs"
 
+export const addPost = async(prevState, formData)=>{
 
-export const addPost = async(formData)=>{
-
-
-    const {title, desc, slug, userId} = Object.fromEntries(formData)
+    const {tipo, atividade, desc, hora, userId, arquivo} = Object.fromEntries(formData)
 
     try {
         connectToDB();
+        const newArquivo = new Arquivo({
+            diretorio:arquivo.name
+        })
+        await newArquivo.save()
         const newPost = new Post({
-            title,
-            desc,
-            slug,
-            userId
+            tipo, atividade, desc, hora, userId, arquivo:arquivo.name
         })
         await newPost.save()
         console.log("Saved to DB")
@@ -52,7 +51,7 @@ export const handleLogout = async () => {
     await signOut()
 }
 export const register = async (previousState, formData)=>{
-    const {username, email, password, passwordRepeat,img} = Object.fromEntries(formData)
+    const {username, email, password, passwordRepeat} = Object.fromEntries(formData)
 
     if(password !== passwordRepeat){return {error:"Password does not match!"}}
     try{
@@ -76,7 +75,6 @@ export const register = async (previousState, formData)=>{
             username,
             email,
             password:hashedPassword,
-            img,
         })
         await newUser.save()
         console.log("saved to db")

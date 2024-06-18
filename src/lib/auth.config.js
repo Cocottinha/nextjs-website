@@ -27,7 +27,7 @@ export const authConfig = {
             const isOnAdminPanel = request.nextUrl?.pathname.startsWith("/admin")
             const isOnBlogPage = request.nextUrl?.pathname.startsWith("/blog")
             const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login")
-            const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register")
+            // const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register")
 
             if(isOnAdminPanel && !user?.isAdmin){
                 return false
@@ -35,9 +35,9 @@ export const authConfig = {
             if(isOnBlogPage && !user){
                 return false
             }
-            if(isOnRegisterPage && !user?.isAdmin){
-                return false
-            }
+            // if(isOnRegisterPage && !user?.isAdmin){
+            //     return false
+            // }
             if(isOnLoginPage && user){
                 return Response.redirect(new URL("/",request.nextUrl))
             }
